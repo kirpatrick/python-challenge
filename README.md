@@ -2,7 +2,7 @@
 Python scripts for analyzing the company financial records
 
 <img src="images/under-construction.png" alt="drawing" width="500"/>
-*Links ill be updated.*
+<i>Links will be updated.</i>
 
 # Project Overview
 ## Python Activity I - PyBank
@@ -23,10 +23,10 @@ Create a Python script that analyzes the records to calculate each of the follow
  
  ### Solution
 *Instructions to run locally.*
-1.
-2.
-3.
-...
+ 1.
+ 2.
+ 3.
+ ...
 [*Link to live project*](https://github.com/kirpatrick/python-challenge)
 
 ## Python Activity II - PyPoll
@@ -47,10 +47,10 @@ Create a Python script that analyzes the votes and calculates each of the follow
 
 ### Solution
 *Instructions to run locally.*
-1.
-2.
-3.
-...
+ 1.
+ 2.
+ 3.
+ ...
 [*Link to live project*](https://github.com/kirpatrick/python-challenge)
 
 ## Source
