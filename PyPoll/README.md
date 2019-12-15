@@ -1,35 +1,8 @@
 # python-challenge
-Python scripts for analyzing the company financial records
-
-<img src="images/under-construction.png" alt="drawing" width="500"/>
+Python script to analyze voting data
 <i>Links will be updated.</i>
 
-# Project Overview
-## Python Activity I - PyBank
-Create a Python script for analyzing the financial records of your company.
-
-### Given
-Financial data; [*budget_data.csv*](https://github.com/kirpatrick/python-challenge). The dataset is composed of two columns: Date and Profit/Losses.
-
-### Instructions / Functionality / Design
-Create a Python script that analyzes the records to calculate each of the following:
-- The total number of months included in the dataset
-- The net total amount of "Profit/Losses" over the entire period
-- The average of the changes in "Profit/Losses" over the entire period
-- The greatest increase in profits (date and amount) over the entire period
-- The greatest decrease in losses (date and amount) over the entire period
-
- Final script will print the analysis to the terminal and export a text file with the results.
- 
- ### Solution
-*Instructions to run locally.*
- 1.
- 2.
- 3.
- ...
-[*Link to live project*](https://github.com/kirpatrick/python-challenge)
-
-## Python Activity II - PyPoll
+# Project Overview - PyPoll
 Create a Python script to analyze voting poll data.
 
 ### Given
