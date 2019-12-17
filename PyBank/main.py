@@ -79,10 +79,12 @@ with open(output_file, "w", newline="") as datafile:
 
     writer.writerow(
         [
-            "Title",
-            "Price",
-            "Subscriber Count",
-            "Number of Reviews", 
-            "Course Length"
+            len(myBudgetDataDictionary["month-year"]),
+            round(sum(myBudgetDataDictionary["profit"])),
+            round(statistics.mean(monthlyChangeDictionary["profit"]),2),
+            monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(max(monthlyChangeDictionary["profit"]))],
+            round(max(monthlyChangeDictionary["profit"])),
+            monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(min(monthlyChangeDictionary["profit"]))],
+            round(min(monthlyChangeDictionary["profit"]))
             ]
         )
