@@ -1,5 +1,6 @@
 import os
 import csv
+import statistics
 
 ####################################################################
 ### References
@@ -21,7 +22,7 @@ losses = 0.00
 total_profits = 0.00
 initial_monthly_value = 0.00
 current_change = 0.00
-monthly_values = []
+current_monthly_value = []
 
 # Analyze
 
@@ -38,7 +39,7 @@ with open(budget_csv, newline='') as csvfile:
     #### Capture row count
     for row in csvreader:
         number_of_months = number_of_months + 1
-        monthly_values.append(float(row[1]))
+        current_monthly_value.append(float(row[1]))
 
         if float(row[1]) < 0:
             losses = losses + float(row[1])
@@ -59,12 +60,17 @@ print(total_profits)
 
 loop_count = 0
 
-initial_monthly_value = monthly_values[0]
-print(initial_monthly_value)
-print(len(monthly_values))
+initial_monthly_value = current_monthly_value[0]
+# print(initial_monthly_value)
+# print(len(monthly_values))
 
-# for i in range(1,len(average_change_over_time)):
+monthly_change = []
 
+for i in range(1,len(current_monthly_value)):
+    monthly_change.append(current_monthly_value[i] - initial_monthly_value)
+    initial_monthly_value = current_monthly_value[i]
+
+print(statistics.mean(monthly_change))
 # print(f"number of rows in average_change_over_time:  {loop_count}")
 # print(initial_monthly_value)
 
