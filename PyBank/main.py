@@ -26,10 +26,10 @@ with open(budget_csv, newline='') as csvfile:
         myBudgetDataDictionary["profit"].append(float(row[1]))
 
 ### Print total number of months (records)
-print(len(myBudgetDataDictionary["month-year"]))
+# print(len(myBudgetDataDictionary["month-year"]))
 
 ## The net total amount of "Profit/Losses" over the entire period
-print(round(sum(myBudgetDataDictionary["profit"])))
+# print(round(sum(myBudgetDataDictionary["profit"])))
 
 ## The average of the changes in "Profit/Losses" over the entire period
 ### Store profits for the first recorded month
@@ -54,37 +54,39 @@ for i in range(1,len(myBudgetDataDictionary["profit"])):
     initial_monthly_value = myBudgetDataDictionary["profit"][i]
 
 ### Return the average monthly change
-print(round(statistics.mean(monthlyChangeDictionary["profit"]),2))
+# print(round(statistics.mean(monthlyChangeDictionary["profit"]),2))
 
 ## The greatest increase in profits (date and amount) over the entire period
 ### Given the index for max profit increase in monthlyChangeDictionary, return the month-year
-print(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(max(monthlyChangeDictionary["profit"]))])
+# print(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(max(monthlyChangeDictionary["profit"]))])
 ### Return max profit increase USD
-print(round(max(monthlyChangeDictionary["profit"])))
+# print(round(max(monthlyChangeDictionary["profit"])))
 
 ## The greatest decrease in losses (date and amount) over the entire period
 ### Given the index for max profit decrease in monthlyChangeDictionary, return the month-year
-print(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(min(monthlyChangeDictionary["profit"]))])
+# print(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(min(monthlyChangeDictionary["profit"]))])
 ### Return max profit decrease USD
-print(round(min(monthlyChangeDictionary["profit"])))
+# print(round(min(monthlyChangeDictionary["profit"])))
 
 # Print analysis to terminal
-## Need to format print statements
+print("Financial Analysis")
+print("---------------------------------")
+print("Total Months:  " + str(len(myBudgetDataDictionary["month-year"])))
+print("Total:  $" + str(round(sum(myBudgetDataDictionary["profit"]))))
+print("Average Change:  $" + str(round(statistics.mean(monthlyChangeDictionary["profit"]),2)))
+print("Greatest Increase in Profits:  " + str(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(max(monthlyChangeDictionary["profit"]))])+" ($" + str(round(max(monthlyChangeDictionary["profit"])))+")")
+print("Greatest Decrease in Profits:  " + str(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(min(monthlyChangeDictionary["profit"]))])+" ($" + str(round(min(monthlyChangeDictionary["profit"])))+")")
 
 # Save analysis to file
-output_file = os.path.join('.','data', 'output.csv')
+output_file = os.path.join('.','data', 'output.txt')
 
 with open(output_file, "w", newline="") as datafile:
-    writer = csv.writer(datafile)
-
-    writer.writerow(
-        [
-            len(myBudgetDataDictionary["month-year"]),
-            round(sum(myBudgetDataDictionary["profit"])),
-            round(statistics.mean(monthlyChangeDictionary["profit"]),2),
-            monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(max(monthlyChangeDictionary["profit"]))],
-            round(max(monthlyChangeDictionary["profit"])),
-            monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(min(monthlyChangeDictionary["profit"]))],
-            round(min(monthlyChangeDictionary["profit"]))
-            ]
-        )
+    datafile.write("Financial Analysis\n")
+    datafile.write("---------------------------------\n")
+    datafile.write("Total Months:  " + str(len(myBudgetDataDictionary["month-year"])) + "\n")
+    datafile.write("Total:  $" + str(round(sum(myBudgetDataDictionary["profit"])))+"\n")
+    datafile.write("Average Change:  $" + str(round(statistics.mean(monthlyChangeDictionary["profit"]),2))+"\n")
+    datafile.write("Greatest Increase in Profits:  " + str(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(max(monthlyChangeDictionary["profit"]))]))
+    datafile.write(" ($" + str(round(max(monthlyChangeDictionary["profit"])))+")\n")
+    datafile.write("Greatest Decrease in Profits:  " + str(monthlyChangeDictionary["month-year"][monthlyChangeDictionary["profit"].index(min(monthlyChangeDictionary["profit"]))]))
+    datafile.write(" ($" + str(round(min(monthlyChangeDictionary["profit"])))+")")
