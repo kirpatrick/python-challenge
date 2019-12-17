@@ -14,12 +14,16 @@ import csv
 # so reference same level in dir tree; '.'
 budget_csv = os.path.join('.','data', 'budget_data.csv')
 
-# Analyze
-## The total number of months included in the dataset
+# Initialize variables
 number_of_months = 0
 profits = 0.00
 losses = 0.00
-profit_loss_percentage = 0.00
+total_profits = 0.00
+initial_monthly_value = 0.00
+current_change = 0.00
+monthly_values = []
+
+# Analyze
 
 ### Open and Read budget_csv
 with open(budget_csv, newline='') as csvfile:
@@ -34,6 +38,7 @@ with open(budget_csv, newline='') as csvfile:
     #### Capture row count
     for row in csvreader:
         number_of_months = number_of_months + 1
+        monthly_values.append(float(row[1]))
 
         if float(row[1]) < 0:
             losses = losses + float(row[1])
@@ -46,16 +51,22 @@ with open(budget_csv, newline='') as csvfile:
 print(number_of_months)
 
 ## The net total amount of "Profit/Losses" over the entire period
-print(profits)
-print(losses)
-profit_loss_percentage = profits/losses
-print(profit_loss_percentage)
-
-total = profits + losses
-print(total)
+total_profits = profits + losses
+print(total_profits)
 
 ## The average of the changes in "Profit/Losses" over the entire period
+# print(average_change_over_time)
 
+loop_count = 0
+
+initial_monthly_value = monthly_values[0]
+print(initial_monthly_value)
+print(len(monthly_values))
+
+# for i in range(1,len(average_change_over_time)):
+
+# print(f"number of rows in average_change_over_time:  {loop_count}")
+# print(initial_monthly_value)
 
 ## The greatest increase in profits (date and amount) over the entire period
 
