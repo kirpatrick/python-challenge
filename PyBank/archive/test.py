@@ -13,7 +13,7 @@ import statistics
 # Read in 'budget_data.csv'
 # Note: main.py is at the same level as the data folder,
 # so reference same level in dir tree; '.'
-budget_csv = os.path.join('.','data', 'budget_data.csv')
+budget_csv = os.path.join('..','data', 'budget_data.csv')
 
 # Initialize variables
 number_of_months = 0
