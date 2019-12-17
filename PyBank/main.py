@@ -53,12 +53,10 @@ print(number_of_months)
 
 ## The net total amount of "Profit/Losses" over the entire period
 total_profits = profits + losses
-print(total_profits)
+print(round(total_profits))
 
 ## The average of the changes in "Profit/Losses" over the entire period
 # print(average_change_over_time)
-
-loop_count = 0
 
 initial_monthly_value = current_monthly_value[0]
 # print(initial_monthly_value)
@@ -70,15 +68,15 @@ for i in range(1,len(current_monthly_value)):
     monthly_change.append(current_monthly_value[i] - initial_monthly_value)
     initial_monthly_value = current_monthly_value[i]
 
-print(statistics.mean(monthly_change))
+print(round(statistics.mean(monthly_change),2))
 # print(f"number of rows in average_change_over_time:  {loop_count}")
 # print(initial_monthly_value)
 
 ## The greatest increase in profits (date and amount) over the entire period
-print(max(monthly_change))
+print(round(max(monthly_change)))
 
 ## The greatest decrease in losses (date and amount) over the entire period
-print(min(monthly_change))
+print(round(min(monthly_change)))
 
 # Print analysis to terminal
 
