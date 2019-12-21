@@ -35,14 +35,31 @@ print(f"Total Votes: {len(electionDataVoterID)}")
 # A complete list of candidates who received votes
 
 # Get unique list of candidates
-candidateList = set(electionDataCandidate)
-print(candidateList)
+# candidateList = set(electionDataCandidate)
+# print(candidateList)
 
-# # Create a dictionary to store number of votes recieved by each candidate
-# votesRecievedDictionary = {"candidate": [], "voteCount": []}
-# # Create field refs b/c that's a lot to type everytime!!!
-# candidate = votesRecievedDictionary["candidate"]
-# voteCount = votesRecievedDictionary["voteCount"]
+# Create a dictionary to store number of votes recieved by each candidate
+votesRecievedDictionary = {"candidate": [], "voteCount": []}
+
+# Initialize candidate list with unique candidates for tally
+votesRecievedDictionary["candidate"] = list(set(electionDataCandidate))
+
+# Create field dictionary refs b/c that's a lot to type everytime!!!
+candidate = votesRecievedDictionary["candidate"]
+voteCount = votesRecievedDictionary["voteCount"]
+
+candidate.append("Kirpatrick")
+# Make sure this works as expected
+print(candidate)
+print("")
+print(votesRecievedDictionary["candidate"])
+
+
+
+
+
+
+
 
 # # Initialize candidate
 # existingCandidate = candidate.append(electionDataCandidate[0])
