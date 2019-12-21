@@ -34,15 +34,26 @@ print(f"Total Votes: {len(electionDataVoterID)}")
 
 # A complete list of candidates who received votes
 
-# Create a dictionary to store number of votes recieved by each candidate
-votesRecievedDictionary = {"county": [], "candidate": [], "voteCount": []}
-# Create field refs b/c that's a lot to type everytime!!!
-profitChange = votesRecievedDictionary["county"]
-profitChangeDate = votesRecievedDictionary["candidate"]
+# Get unique list of candidates
+candidateList = set(electionDataCandidate)
+print(candidateList)
+
+# # Create a dictionary to store number of votes recieved by each candidate
+# votesRecievedDictionary = {"candidate": [], "voteCount": []}
+# # Create field refs b/c that's a lot to type everytime!!!
+# candidate = votesRecievedDictionary["candidate"]
+# voteCount = votesRecievedDictionary["voteCount"]
+
+# # Initialize candidate
+# existingCandidate = candidate.append(electionDataCandidate[0])
+# # Tally each vote
+# for i in range(0,len(electionDataVoterID)):
+#     # check if existing candidate
+#     if candidate[i] == existingCandidate:
+#         voteCount[i] = voteCount[i] + 1
+#     else:
 
 
-
-for i in range(0,len(electionDataVoterID)):
 #################################################################################    
 
 # The percentage of votes each candidate won
