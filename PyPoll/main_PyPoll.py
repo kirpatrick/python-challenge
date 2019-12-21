@@ -1,7 +1,14 @@
 import os
 import csv
 import statistics
+
+# need access to 'set' method to return unique candidate names
 from itertools import chain
+
+# want to time script execution
+import time
+
+start_time = time.time()
 
 # Create dictionary to store poll data
 electionDataDictionary = {"voter-id": [], "county": [], "candidate": []}
@@ -29,7 +36,8 @@ with open(election_csv, newline='') as csvfile:
 
 # Analyze
 ## The total number of votes cast
-print(f"Total Votes: {len(electionDataVoterID)}")
+totalVotes = len(electionDataVoterID)
+print(f"Total Votes: {totalVotes}")
 #################################################################################
 
 # A complete list of candidates who received votes
@@ -46,7 +54,14 @@ candidate = votesRecievedDictionary["candidate"]
 voteCount = votesRecievedDictionary["voteCount"]
 
 # Initialize candidate list with unique candidates for tally
-candidate = list(sorted(set(electionDataCandidate)))
+# candidate = list(sorted(set(electionDataCandidate)))
+
+print(candidate)
+
+# candidateOneTotal = sum(1 for i in electionDataDictionary if electionDataCandidate[i] == candidate[0])
+
+# print(f"Candidate One got {candidateOneTotal} votes.")
+
 
 # Initialize vote counts
 voteCount = [0,0,0,0]
@@ -63,23 +78,35 @@ voteCount = [0,0,0,0]
 # Catch unknown candidate entries
 # unknownCandidateIndex = 4
 
-# Tally each vote in election data
-for i in range(0,len(electionDataVoterID)):
-    # Check against the candidates list
-    for j in range(0,len(candidate)):
-        # Tally votes for known candidates
+# # Tally each vote in election data
+# for i in range(0,totalVotes):
+#     # Check against the candidates list
+#     for j in range(0,len(candidate)):
+#         # Tally votes for known candidates
         
-        if electionDataCandidate[i] == candidate[j]:
-            voteCount[j] = voteCount[j] + 1
-        # Add unknown candidates if exist
-        else:
-            # Add the unknown candidate's name to the list
-            candidate.append(electionDataCandidate[i])
-            # Tally 1 vote for new candidate
-            voteCount.append(1)
+#         if electionDataCandidate[i] == candidate[j]:
+#             voteCount[j] = voteCount[j] + 1
+#         # Add unknown candidates if exist
+#         else:
+#             # Add the unknown candidate's name to the list
+#             candidate.append(electionDataCandidate[i])
+#             # Tally 1 vote for new candidate
+#             voteCount.append(1)
 
-print(candidate[j])
-print(voteCount[j])
+
+# print("\nCandidate 0")
+# print(candidate[0])
+# print(voteCount[0])
+# print("Candidate 1")
+# print("\nCandidate 1")
+# print(candidate[1])
+# print(voteCount[1])
+# print("\nCandidate 2")
+# print(candidate[2])
+# print(voteCount[2])
+# print("\nCandidate 3")
+# print(candidate[3])
+# print(voteCount[3])
 
     
     # # Tally votes...
@@ -127,3 +154,5 @@ print(voteCount[j])
 # Save analysis to file
 
 #################################################################################
+
+print("--- %s second runtime ---" % (time.time() - start_time))
