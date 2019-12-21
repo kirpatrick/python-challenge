@@ -41,36 +41,70 @@ print(f"Total Votes: {len(electionDataVoterID)}")
 # Create a dictionary to store number of votes recieved by each candidate
 votesRecievedDictionary = {"candidate": [], "voteCount": []}
 
-# Initialize candidate list with unique candidates for tally
-votesRecievedDictionary["candidate"] = list(set(electionDataCandidate))
-
 # Create field dictionary refs b/c that's a lot to type everytime!!!
 candidate = votesRecievedDictionary["candidate"]
 voteCount = votesRecievedDictionary["voteCount"]
 
-candidate.append("Kirpatrick")
-# Make sure this works as expected
-print(candidate)
-print("")
-print(votesRecievedDictionary["candidate"])
+# Initialize candidate list with unique candidates for tally
+candidate = list(sorted(set(electionDataCandidate)))
 
+# Initialize vote counts
+voteCount = [0,0,0,0]
 
+# print(candidate[0])
+# print(len(candidate))
+# candidate.append("Kirpatrick")
+# # Make sure this works as expected
+# print(candidate)
+# print("")
+# print(votesRecievedDictionary["candidate"])
+# # Confirmed...changing candidate updated the dictionary
 
+# Catch unknown candidate entries
+# unknownCandidateIndex = 4
 
+# Tally each vote in election data
+for i in range(0,len(electionDataVoterID)):
+    # Check against the candidates list
+    for j in range(0,len(candidate)):
+        # Tally votes for known candidates
+        
+        if electionDataCandidate[i] == candidate[j]:
+            voteCount[j] = voteCount[j] + 1
+        # Add unknown candidates if exist
+        else:
+            # Add the unknown candidate's name to the list
+            candidate.append(electionDataCandidate[i])
+            # Tally 1 vote for new candidate
+            voteCount.append(1)
 
+print(candidate[j])
+print(voteCount[j])
 
+    
+    # # Tally votes...
+    # # For the 1st candidate
+    # if electionDataCandidate[i] == candidate[0]:
+    #     voteCount[0] = voteCount[0] + 1
+    # # For the 2nd candidate
+    # elif electionDataCandidate[i] == candidate[1]:
+    #     voteCount[1] = voteCount[1] + 1
+    # # For the 3rd candidate
+    # elif electionDataCandidate[i] == candidate[2]:
+    #     voteCount[2] = voteCount[2] + 1
+    # # For the 4th candidate
+    # elif electionDataCandidate[i] == candidate[3]:
+    #     voteCount[3] = voteCount[3] + 1
+    # # Not in the Original Candidate List
+    # else:
+    #     # Add the unknown candidate's name to the list
+    #     candidate.append(candidate[i])
+    #     # Tally a vote for this candidate
+    #     voteCount.append(1)
+    #     [unknownCandidateIndex] == candidate[3]:
+    #     voteCount[3] = voteCount[3] + 1
 
-
-# # Initialize candidate
-# existingCandidate = candidate.append(electionDataCandidate[0])
-# # Tally each vote
-# for i in range(0,len(electionDataVoterID)):
-#     # check if existing candidate
-#     if candidate[i] == existingCandidate:
-#         voteCount[i] = voteCount[i] + 1
-#     else:
-
-
+# print(votesRecievedDictionary)
 #################################################################################    
 
 # The percentage of votes each candidate won
