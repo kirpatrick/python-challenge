@@ -35,9 +35,10 @@ with open(election_csv, newline='') as csvfile:
 #################################################################################
 
 # Analyze
-## The total number of votes cast
+# The total number of votes cast
 totalVotes = len(electionDataVoterID)
-print(f"Total Votes: {totalVotes}")
+# Test
+# print(f"Total Votes: {totalVotes}")
 #################################################################################
 
 # Create a dictionary to store number of votes recieved by each candidate
@@ -104,38 +105,50 @@ for i in range(0,totalVotes):
         # Tally a vote for this candidate
         voteCount.append(1)
 #################################################################################
-
+wonPopularVote = voteCount.index(max(voteCount))
 # Test counts
-print("\nCandidate 0")
-print(candidate[0])
-print(voteCount[0])
+# print("\nCandidate 0")
+# print(candidate[0])
+# print(voteCount[0])
 
-print("\nCandidate 1")
-print(candidate[1])
-print(voteCount[1])
+# print("\nCandidate 1")
+# print(candidate[1])
+# print(voteCount[1])
 
-print("\nCandidate 2")
-print(candidate[2])
-print(voteCount[2])
+# print("\nCandidate 2")
+# print(candidate[2])
+# print(voteCount[2])
 
-print("\nCandidate 3")
-print(candidate[3])
-print(voteCount[3])
+# print("\nCandidate 3")
+# print(candidate[3])
+# print(voteCount[3])
 
-# print(votesRecievedDictionary)
+# Print Results
+print("Election Results")
+print("---------------------------------")
+
+## The total number of votes cast
+print(f"Total Votes:  {totalVotes}")
+print("---------------------------------")
 #################################################################################
 
-# The percentage of votes each candidate won
-
-
-#################################################################################
-
-# The total number of votes each candidate won
-
+# The percentage and total number of votes each candidate won
+for i in range(0,len(candidate)):
+    print(f"{candidate[i]}:  {format(float(voteCount[i]/totalVotes)*100, '.3f')}% ({voteCount[i]})")
+# # First Candidate Listed
+# print(f"{candidate[0]}:  {format(float(voteCount[0]/totalVotes)*100, '.3f')}% ({voteCount[0]})")
+# # Second Candidate Listed
+# print(f"{candidate[1]}:  {format(float(voteCount[1]/totalVotes)*100, '.3f')}% ({voteCount[1]})")
+# # Third Candidate Listed
+# print(f"{candidate[2]}:  {format(float(voteCount[2]/totalVotes)*100, '.3f')}% ({voteCount[2]})")
+# # Fourht Candidate Listed
+# print(f"{candidate[3]}:  {format(float(voteCount[3]/totalVotes)*100, '.3f')}% ({voteCount[3]})")
+print("---------------------------------")
 #################################################################################
 
 # The winner of the election based on popular vote
-
+print(f"Winner:  {candidate[wonPopularVote]}")
+print("---------------------------------")
 #################################################################################
 
 # Print analysis to terminal
