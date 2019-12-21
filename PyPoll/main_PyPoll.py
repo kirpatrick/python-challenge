@@ -132,6 +132,7 @@ print(f"Total Votes:  {totalVotes}")
 print("---------------------------------")
 #################################################################################
 
+# Print analysis to terminal
 # The percentage and total number of votes each candidate won
 for i in range(0,len(candidate)):
     print(f"{candidate[i]}:  {format(float(voteCount[i]/totalVotes)*100, '.3f')}% ({voteCount[i]})")
@@ -149,14 +150,20 @@ print("---------------------------------")
 # The winner of the election based on popular vote
 print(f"Winner:  {candidate[wonPopularVote]}")
 print("---------------------------------")
-#################################################################################
-
 # Print analysis to terminal
-
-#################################################################################
+# #################################################################################
 
 # Save analysis to file
-
+output_file = os.path.join('.','data', 'output.txt')
+with open(output_file, "w", newline="") as datafile:
+    datafile.write("Election Results\n")
+    datafile.write("---------------------------------\n")
+    datafile.write(f"Total Votes:  {totalVotes} \n")
+    for i in range(0,len(candidate)):
+        datafile.write(f"{candidate[i]}:  {format(float(voteCount[i]/totalVotes)*100, '.3f')}% ({voteCount[i]})\n")
+    datafile.write("---------------------------------\n")
+    datafile.write(f"Winner:  {candidate[wonPopularVote]}\n")
+    datafile.write("---------------------------------\n")
 #################################################################################
 
 print("--- %s second runtime ---" % (time.time() - start_time))
