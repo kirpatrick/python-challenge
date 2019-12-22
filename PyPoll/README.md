@@ -1,6 +1,5 @@
 # python-challenge
 Python script to analyze voting data
-<i>Links will be updated.</i>
 
 # Project Overview - PyPoll
 Create a Python script to analyze voting poll data.

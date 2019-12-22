@@ -1,8 +1,6 @@
 # python-challenge
 Python scripts for analyzing the company financial records
 
-<i>Links will be updated.</i>
-
 # Project Overview - PyBank
 Create a Python script for analyzing the financial records of your company.
 

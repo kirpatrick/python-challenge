@@ -1,8 +1,6 @@
 # python-challenge
 Python scripts for analyzing the company financial records
 
-<i>Links will be updated.</i>
-
 # Project Overview - PyBoss
 Create a Python script to convert employee record data to the required format.
 
