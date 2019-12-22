@@ -13,7 +13,7 @@ Employee data; [*employee_data.csv*](https://github.com/kirpatrick/python-challe
 - State
 
 ### Instructions / Functionality / Design
-help bridge the gap by creating a Python script able to convert your employee records to the required format.
+Help bridge the gap by creating a Python script able to convert your employee records to the required format.
 The Name column should be split into separate First Name and - Last Name columns.
 - The DOB data should be re-written into MM/DD/YYYY format.
 - The SSN data should be re-written such that the first five numbers are hidden from view.
