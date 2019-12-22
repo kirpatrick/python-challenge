@@ -1,4 +1,5 @@
 from collections import Counter
+import statistics
 
 # Store the file paths associated with the files
 # file = './raw_data/paragraph_1.txt'
@@ -35,9 +36,10 @@ print(f"Approximate Sentence Count:  {sum(sentenceCount.values())}")
 #################################################################################
 
 # Approximate letter count (per word)
-
+print(statistics.mean(text.values()))
 #################################################################################
 
 # Average sentence length (in words)
 
 #################################################################################
+

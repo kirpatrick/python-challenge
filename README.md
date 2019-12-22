@@ -15,7 +15,7 @@ Create a Python script to analyze voting poll data.
 ## [Bonus] Python Activity III - PyBoss
 Create a Python script to convert employee record data to the required format.
 
-[PyBoss Design and Solution](https://github.com/kirpatrick/python-challenge/tree/master/PyBoss)
+[PyBoss Design and Solution](https://github.com/kirpatrick/python-challenge/tree/master/ExtraContent/PyBoss)
 
 ## [Bonus] Python Activity IV - PyParagraph
 Create a Python script to automate text analysis of any passage using these metrics:
@@ -24,7 +24,7 @@ Create a Python script to automate text analysis of any passage using these metr
 - Approximate letter count (per word)
 - Average sentence length (in words)
 
-[PyParagraph Design and Solution](https://github.com/kirpatrick/python-challenge/tree/master/PyParagraph)
+[PyParagraph Design and Solution](https://github.com/kirpatrick/python-challenge/tree/master/ExtraContent/PyParagraph)
 
 ## Source
 [SMU DS Boot Camp - VBA Scripting Challenge](https://smu.bootcampcontent.com/SMU-Coding-Bootcamp/SMU-DAL-DATA-PT-11-2019-U-C/tree/master/02-Homework/03-Python/Instructions)
