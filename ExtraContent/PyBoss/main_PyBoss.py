@@ -1,9 +1,7 @@
 import os
 import csv
 import statistics
-
-# need access to 'set' method to return unique candidate names
-from itertools import chain
+from us_states import us_state_abbrev
 
 # Create dictionary to store poll data
 employeeDataDictionary = {"EmpID": [], "Name": [], "DOB": [], "SSN": [], "State": []}
@@ -74,12 +72,28 @@ for i in range(0,len(emplDataEmplID)):
     SSN = emplDataSSN[i].split("-")
     newSSN.append(str(f"***-**-{SSN[2]}"))
 #################################################################################
+
+# The State data should be re-written as simple two-letter abbreviations.
+myStateDictionary = {"state": [],"abbreviation": []}
+
+myState = myStateDictionary["state"]
+myAbbreviation = myStateDictionary["abbreviation"]
+for key, value in us_state_abbrev.items():
+    myState.append(key)
+    myAbbreviation.append(value)
+
+for i in range(0,len(emplDataEmplID)):
+    for j in range(0,len(myState)):
+        if emplDataState[i] == myState[j]:
+            newState.append(myAbbreviation[j])
+            # print("Loop works!")
+#################################################################################
 # # Test
 print(newFirstName[0])
 print(newLastName[0])
 print(newDOB[0])
 print(newSSN[0])
-
-# The State data should be re-written as simple two-letter abbreviations.
-
-#################################################################################
+# print(f'{us_state_abbrev["Alabama"]}')
+# print(f'{us_state_abbrev.keys()}')
+# print(f'{us_state_abbrev.items()}')
+print(newState[0])
