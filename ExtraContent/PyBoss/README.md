@@ -7,7 +7,7 @@ Python scripts for analyzing the company financial records
 Create a Python script to convert employee record data to the required format.
 
 ### Given
-Financial data; [*employee_data.csv*](https://github.com/kirpatrick/python-challenge/tree/master/ExtraContent/PyBoss/data). The dataset is composed of:
+Employee data; [*employee_data.csv*](https://github.com/kirpatrick/python-challenge/tree/master/ExtraContent/PyBoss/data). The dataset is composed of:
 - Emp ID
 - Name
 - DOB
