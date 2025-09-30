@@ -27,7 +27,7 @@ The Name column should be split into separate First Name and - Last Name columns
 
     $ Python main.py
 
-5. Analysis results will be printed to the terminal and saved to *'./data/formatted_employee_data.csv'*
+5. Analysis results will be saved to *'./data/formatted_employee_data.csv'*
  
 
 ## Source
